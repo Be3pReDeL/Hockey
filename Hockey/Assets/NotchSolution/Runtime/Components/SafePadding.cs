@@ -1,8 +1,10 @@
 ﻿//#define DEBUG_NOTCH_SOLUTION
 
+using System.ComponentModel;
 using UnityEngine;
 #if DEBUG_NOTCH_SOLUTION
 using System.Linq;
+
 #endif
 
 namespace E7.NotchSolution
@@ -38,6 +40,9 @@ namespace E7.NotchSolution
     [HelpURL("https://exceed7.com/notch-solution/components/ui-behaviour/safe-padding.html")]
     public class SafePadding : NotchSolutionUIBehaviourBase
     {
+        protected override void Start(){
+            UpdateRect();
+        }
         protected override void UpdateRect()
         {
             var selectedOrientation =
