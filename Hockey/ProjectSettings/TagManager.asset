@@ -3,12 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player 1
+  - Player 2
+  - Puck
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pass Trough
   - Water
   - UI
   - 
