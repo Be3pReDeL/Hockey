@@ -7645,7 +7645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _UIController: {fileID: 282841363}
   _movable: 0
-  _finalAlpha: 1
+  _finalAlpha: 0.3
 --- !u!1 &1555711519
 GameObject:
   m_ObjectHideFlags: 0
@@ -8873,7 +8873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _UIController: {fileID: 282841363}
   _movable: 0
-  _finalAlpha: 1
+  _finalAlpha: 0.3
 --- !u!1 &1861790468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2507530074918297922, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
@@ -10255,6 +10255,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Team Options
       objectReference: {fileID: 0}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2507530074562333258}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GetTextInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TeamOptionsMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507530075075566805, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2507530075234781550, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
       propertyPath: m_SizeDelta.x
       value: 421
@@ -10371,3 +10399,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 0.3
+--- !u!114 &2507530074562333258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2531577959752932683, guid: 2b74e249b3b15474bbc15aa265521570, type: 3}
+  m_PrefabInstance: {fileID: 2507530074562333254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59652772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22edf36ab22948c9a970b453ffad916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

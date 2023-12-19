@@ -7,7 +7,7 @@ public class Puck : MonoBehaviour {
 
     private bool _isAttached = false, _isShooting = false;
 
-    private Rigidbody2D _rigidBody;
+    public Rigidbody2D RigidBody;
     private CapsuleCollider2D _capsuleCollider2D;
 
     private void Awake() {
@@ -16,7 +16,7 @@ public class Puck : MonoBehaviour {
         else
             Destroy(this);
 
-        _rigidBody = Instance.GetComponent<Rigidbody2D>();
+        RigidBody = Instance.GetComponent<Rigidbody2D>();
         _capsuleCollider2D = Instance.GetComponent<CapsuleCollider2D>();
     }
 
@@ -27,7 +27,7 @@ public class Puck : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        _rigidBody.velocity = Vector2.Lerp(_rigidBody.velocity, Vector2.zero, _deceleration * Time.fixedDeltaTime);
+        RigidBody.velocity = Vector2.Lerp(RigidBody.velocity, Vector2.zero, _deceleration * Time.fixedDeltaTime);
     }
 
     public void AttachTo(GameObject target) {
@@ -47,7 +47,7 @@ public class Puck : MonoBehaviour {
     }
 
     public void Shoot(Vector2 direction, float shootPower) {
-        _rigidBody.AddForce(direction * shootPower, ForceMode2D.Impulse);
+        RigidBody.AddForce(direction * shootPower, ForceMode2D.Impulse);
 
         _capsuleCollider2D.isTrigger = false;
     }
