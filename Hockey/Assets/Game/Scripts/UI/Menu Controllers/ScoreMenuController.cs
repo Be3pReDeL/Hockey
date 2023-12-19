@@ -31,6 +31,7 @@ public class ScoreMenuController : UIController
         }
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void SetWinner(){
         if(GameManager.Instance.GameEnded){
             _winnerTeamText.text = "Tournament Over!";
@@ -51,9 +52,6 @@ public class ScoreMenuController : UIController
                 _looserTeamText.text = GameManager.Instance.CurrentTeams[1].Name;
             }
         }
-        
-
-        GameManager.Instance.CurrentTeams.Clear();
 
         StartCoroutine(LoadNext());
     }

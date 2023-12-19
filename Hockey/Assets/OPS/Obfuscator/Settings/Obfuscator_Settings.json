@@ -151,7 +151,9 @@
             "UniWebViewNamespace",
             "E7.NotchSolution",
             "OneSignalSDK",
-            "AppsFlyerSDK"
+            "AppsFlyerSDK",
+            "CandyCoded.HapticFeedback",
+            "UnityEditor.Animations"
           ]
         }
       ]

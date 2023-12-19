@@ -26,7 +26,7 @@ public class OptionsMenuController : UIController
 
     private void Start(){
         _musicSlider.value =  1 - PlayerPrefs.GetInt("Mute", 0);
-        _vibrationSlider.value = 1 - PlayerPrefs.GetInt("Vibrate", 0);
+        _vibrationSlider.value = PlayerPrefs.GetInt("Vibrate", 0);
     }
 
     [OPS.Obfuscator.Attribute.DoNotRename]
@@ -38,6 +38,7 @@ public class OptionsMenuController : UIController
         }
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void OnMusicSliderChangeValue(){
         if(_musicSlider.value >= 0.7f) {
             _musicSlider.value = 1f;
@@ -54,17 +55,18 @@ public class OptionsMenuController : UIController
         AudioListener.volume = 1 - PlayerPrefs.GetInt("Mute", 0);
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void OnVibrationSliderChangeValue(){
         if(_vibrationSlider.value >= 0.7f) {
             _vibrationSlider.value = 1f;
 
-            PlayerPrefs.SetInt("Vibrate", 0);
+            PlayerPrefs.SetInt("Vibrate", 1);
         }
 
         else if(_vibrationSlider.value <= 0.3f){
             _vibrationSlider.value = 0f;
 
-            PlayerPrefs.SetInt("Vibrate", 1);
+            PlayerPrefs.SetInt("Vibrate", 0);
         }
     }
 

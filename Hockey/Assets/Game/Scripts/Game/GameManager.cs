@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField] private Animator _player1Animator, _player2Animator;
 
-    [SerializeField] private AnimatorController[] _animatorControllers, _animatorControllersTop;
+    [SerializeField] private RuntimeAnimatorController[] _animatorControllers, _animatorControllersTop;
     [SerializeField] private Sprite[] _avatars;
     [SerializeField] private Image _upperTeamAvatar, _bottomTeamAvatar;
     [SerializeField] private ScoreMenuController _scoreMenuController;

@@ -11,13 +11,13 @@ public class PlaySoundAndVibrateButton : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    //[OPS.Obfuscator.Attribute.DoNotRename]
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void PlaySound(AudioClip audioClip)
     {
         _audioSource.PlayOneShot(audioClip);
     }
 
-    //[OPS.Obfuscator.Attribute.DoNotRename]
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void Vibrate(){
         if(PlayerPrefs.GetInt("Vibrate", 0) == 1)
             HapticFeedback.LightFeedback();

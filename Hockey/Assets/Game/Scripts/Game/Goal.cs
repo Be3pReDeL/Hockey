@@ -9,6 +9,7 @@ public class Goal : MonoBehaviour {
         _audioSource = GetComponent<AudioSource>();
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     private void OnTriggerEnter2D(Collider2D collider2D) {
         if(collider2D.tag == "Puck") {
             if(_upperGoal)

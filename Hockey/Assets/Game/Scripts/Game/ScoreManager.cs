@@ -81,6 +81,16 @@ public class ScoreManager : MonoBehaviour {
 
     private void Win(){
        _scoreMenuController.gameObject.SetActive(true);
+
+       if(PlayerPrefs.GetInt("Counter", 1) > 7){
+            PlayerPrefs.SetInt("Counter", 1);
+       }
+
+       PlayerPrefs.SetString("Team1" + Convert.ToString(PlayerPrefs.GetInt("Counter", 1)), GameManager.Instance.CurrentTeams[1].Name);
+       PlayerPrefs.SetString("Team2" + Convert.ToString(PlayerPrefs.GetInt("Counter", 1)), GameManager.Instance.CurrentTeams[0].Name);
+       PlayerPrefs.SetString("TeamScore" + Convert.ToString(PlayerPrefs.GetInt("Counter", 1)), Convert.ToString(_upperTeamScore) + ":" + Convert.ToString(_bottomTeamScore));
+
+       PlayerPrefs.SetInt("Counter", PlayerPrefs.GetInt("Counter", 1) + 1);
     }
 
     private void OnDisable() {
