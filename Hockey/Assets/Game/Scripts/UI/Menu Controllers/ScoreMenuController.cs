@@ -2,6 +2,8 @@ using UnityEngine;
 using OPS;
 using TMPro;
 using System.Collections;
+using Unity.VisualScripting;
+using System.Text.RegularExpressions;
 
 public class ScoreMenuController : UIController
 {
@@ -30,15 +32,26 @@ public class ScoreMenuController : UIController
     }
 
     public void SetWinner(){
-        if(ScoreManager.Instance.BottomTeamScore < ScoreManager.Instance.UpperTeamScore){
-            _winnerTeamText.text = GameManager.Instance.CurrentTeams[1].Name;
-            _looserTeamText.text = GameManager.Instance.CurrentTeams[0].Name;
-        }
+        if(GameManager.Instance.GameEnded){
+            _winnerTeamText.text = "Tournament Over!";
+            _looserTeamText.text = "Thank you!";
 
-        else {
-            _winnerTeamText.text = GameManager.Instance.CurrentTeams[0].Name;
-            _looserTeamText.text = GameManager.Instance.CurrentTeams[1].Name;
+            LoadScene.LoadPreviousScene();
         }
+            
+
+        else{
+            if(ScoreManager.Instance.BottomTeamScore < ScoreManager.Instance.UpperTeamScore){
+                _winnerTeamText.text = GameManager.Instance.CurrentTeams[1].Name;
+                _looserTeamText.text = GameManager.Instance.CurrentTeams[0].Name;
+            }
+
+            else {
+                _winnerTeamText.text = GameManager.Instance.CurrentTeams[0].Name;
+                _looserTeamText.text = GameManager.Instance.CurrentTeams[1].Name;
+            }
+        }
+        
 
         GameManager.Instance.CurrentTeams.Clear();
 

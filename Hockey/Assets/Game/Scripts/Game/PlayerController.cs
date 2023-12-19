@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D _rigidBody;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
+    private AudioSource _audioSource;
 
     private Vector2 _startPosition, _movementDirection;
     private float _startTouchTime;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start() {
@@ -121,6 +123,8 @@ public class PlayerController : MonoBehaviour {
 
             Puck.Instance.Detach();
             Puck.Instance.Shoot(_lastMoveDirection, _shootPower);
+
+            _audioSource.Play();
         }
     }
 

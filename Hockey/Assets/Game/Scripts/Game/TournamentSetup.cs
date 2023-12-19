@@ -9,6 +9,8 @@ public class TournamentSetup : MonoBehaviour
     public static List<Team> Teams { get; private set; } = new List<Team>();
 
     private void Awake(){
+        PlayerPrefs.SetInt("Current Teams", -1);
+        
         DontDestroyOnLoad(this);
 
         if(Instance == null)

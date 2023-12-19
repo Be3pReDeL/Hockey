@@ -25,8 +25,8 @@ public class OptionsMenuController : UIController
     }
 
     private void Start(){
-        _musicSlider.value = PlayerPrefs.GetInt("Mute", 0);
-        _vibrationSlider.value = PlayerPrefs.GetInt("Vibrate", 0);
+        _musicSlider.value =  1 - PlayerPrefs.GetInt("Mute", 0);
+        _vibrationSlider.value = 1 - PlayerPrefs.GetInt("Vibrate", 0);
     }
 
     [OPS.Obfuscator.Attribute.DoNotRename]

@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour {
     private class UnityEventIntTMPUGUI : UnityEvent<int, TextMeshProUGUI> { }
     private UnityEventIntTMPUGUI _onTeamScoreChanged;
 
-    private int _timer = 300;
+    private float _timer = 300;
 
     private int _bottomTeamScore = 0;
     public int BottomTeamScore {
@@ -52,11 +52,11 @@ public class ScoreManager : MonoBehaviour {
 
     private void Update() {
         if(_timer > 0) {
-            _timer -= Mathf.RoundToInt(Time.deltaTime);
+            _timer -= Time.deltaTime;
 
             // Format the time as minutes:seconds
-            int minutes = _timer / 60;
-            int seconds = _timer % 60;
+            float minutes = _timer / 60;
+            float seconds = _timer % 60;
             _timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
         }
         else {
@@ -80,7 +80,6 @@ public class ScoreManager : MonoBehaviour {
     }
 
     private void Win(){
-        GameManager.Instance.GameEnded = true; 
        _scoreMenuController.gameObject.SetActive(true);
     }
 
