@@ -23,7 +23,7 @@ public class MuteSoundButton : MonoBehaviour
         AudioListener.volume = 1 - PlayerPrefs.GetInt("Mute", 0);
     }
 
-    //[OPS.Obfuscator.Attribute.DoNotRename]
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void MuteSound()
     {
         if (PlayerPrefs.GetInt("Mute", 0) == 0)

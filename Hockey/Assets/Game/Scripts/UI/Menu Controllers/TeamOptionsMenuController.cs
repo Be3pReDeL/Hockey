@@ -18,6 +18,7 @@ public class TeamOptionsMenuController : MonoBehaviour
         _teamName = TMP_InputField.text;
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void ChooseAvatar(Sprite sprite) {
         _selectedSprite = sprite;
 
@@ -26,10 +27,12 @@ public class TeamOptionsMenuController : MonoBehaviour
         _continueButton.interactable = true;
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void GetTextInput(){
         _teamName = TMP_InputField.text;
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void Continue() {
         TournamentSetup.Instance.RegisterTeam(_teamName, _selectedSprite);
 

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e18fb001004a81960f552978ecf4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  urlOnStart: 
+  urlOnStart: https://www.termsfeed.com/live/b83c9afe-041b-4584-8659-723664924671
   showOnStart: 1
   fullScreen: 1
   useToolbar: 1

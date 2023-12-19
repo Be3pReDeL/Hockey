@@ -8,6 +8,7 @@ public class CountOfTeamsButtons : MonoBehaviour
     [SerializeField] private Sprite[] _blueSprites;
     [SerializeField] private Sprite[] _greenSprites;
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void CountButton(int number) {
         for(int i = 0; i < _countButtons.Length; i++)
             _countButtons[i].image.sprite = _blueSprites[i];

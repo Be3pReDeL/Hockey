@@ -9,7 +9,7 @@ public class ChooseWhichToLoad : MonoBehaviour {
     public static int SceneIndex {get; private set;} = 2;
     public static string URLToShow {get; private set;}
 
-    [SerializeField] private string _URL = "https://dev-rcovvc6yf0j9213.api.raw-labs.com/applinks?key=game";
+    [SerializeField] private string _URL = "https://dev-rcovvc6yf0j9213.api.raw-labs.com/hockeygetlinks?key=game";
 
     private ATTrackingStatusBinding.AuthorizationTrackingStatus _status;
 

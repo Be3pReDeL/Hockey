@@ -19,11 +19,12 @@ public class TournamentSetup : MonoBehaviour
         else 
             Destroy(this);
     }
-
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void SetNumberOfTeams(int number) {
         NumberOfTeams = number;
     }
 
+    [OPS.Obfuscator.Attribute.DoNotRename]
     public void RegisterTeam(string name, Sprite avatar) {
         if (Teams.Count < NumberOfTeams)
         {
