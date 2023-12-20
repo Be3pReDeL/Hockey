@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] private GameObject _tutorialScreen;
     private List<Team>[] _teamsToPlay;
 
     [SerializeField] private Animator _player1Animator, _player2Animator;
@@ -27,6 +29,12 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        if(PlayerPrefs.GetInt("Tutorial", 0) == 0){
+            _tutorialScreen.SetActive(true);
+
+            PlayerPrefs.SetInt("Tutorial", 1);
+        }
+        
         int numberOfMatches = TournamentSetup.NumberOfTeams * (TournamentSetup.NumberOfTeams - 1) / 2;
         _teamsToPlay = new List<Team>[numberOfMatches];
 
